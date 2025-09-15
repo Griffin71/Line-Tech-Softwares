@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Line Tech Softwares provides IT support, cybersecurity, backups, and software solutions for businesses in South Africa. - Plug into possibility.">
+<meta name="keywords" content="IT support South Africa, cybersecurity services, data backup, Line Tech">
+
+  <title>Line Tech - Plug into Possibility</title>
+  <!--Google Tracking-->
+  <!-- Google tag (gtag.js) -->
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JDQ0LWHM8J"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-JDQ0LWHM8J');
+</script>
+
+  <!-- Alpine.js -->
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<link rel="icon" type="image/x-icon" href="Line Tech Logo 2.png">
+  <link rel="stylesheet" href="tooltip.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.1/cdn.min.js" defer></script>
+<style id="app-style">
+    /* Base font and smooth scrolling */
+    body {
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+        background: #f8fafc;
+        color: #22223b;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+        background: linear-gradient(120deg, rgba(49, 46, 129, 0.85) 0%, rgba(99, 102, 241, 0.7) 100%), 
+            url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1500&q=80');
+        background-size: cover;
+        background-position: center;
+        min-height: 85vh;
+        position: relative;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+        border-radius: 0 0 2rem 2rem;
+        overflow: hidden;
+    }
+    .hero-section h1 {
+        letter-spacing: 1px;
+        text-shadow: 0 4px 32px rgba(49,46,129,0.25);
+        animation: heroFadeIn 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    .hero-section p {
+        text-shadow: 0 2px 16px rgba(49,46,129,0.15);
+        animation: heroFadeIn 1.6s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes heroFadeIn {
+        from { opacity: 0; transform: translateY(40px);}
+        to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+        opacity: 0.85;
+        z-index: 2;
+    }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%);}
+        40% { transform: translateY(-20px) translateX(-50%);}
+        60% { transform: translateY(-10px) translateX(-50%);}
+    }
+
+    /* SERVICE CARDS */
+    .service-card {
+        transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+        border: 1.5px solid #f1f5f9;
+        box-shadow: 0 2px 12px 0 rgba(99,102,241,0.07);
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(120deg, #fff 80%, #f3f4f6 100%);
+    }
+    .service-card:hover {
+        transform: translateY(-8px) scale(1.025);
+        box-shadow: 0 12px 32px 0 rgba(99,102,241,0.13), 0 2px 8px 0 rgba(0,0,0,0.04);
+        border-color: #6366f1;
+    }
+    .service-icon {
+        background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+        height: 64px;
+        width: 64px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+        box-shadow: 0 4px 16px 0 rgba(99,102,241,0.18);
+        border: 2px solid #fff;
+        font-size: 2rem;
+        color: #fff;
+        transition: box-shadow 0.2s;
+    }
+    .service-card:hover .service-icon {
+        box-shadow: 0 8px 32px 0 rgba(99,102,241,0.28);
+    }
+
+    /* CALCULATOR */
+    .pricing-toggle {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        vertical-align: middle;
+    }
+    .pricing-toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .pricing-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: #e0e7ff;
+        transition: .4s;
+        border-radius: 34px;
+        box-shadow: 0 2px 8px 0 rgba(99,102,241,0.08);
+    }
+    .pricing-slider:before {
+        position: absolute;
+        content: "";
+        height: 26px; width: 26px;
+        left: 4px; bottom: 4px;
+        background-color: #fff;
+        transition: .4s;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px 0 rgba(99,102,241,0.10);
+    }
+    input:checked + .pricing-slider {
+        background-color: #6366F1;
+    }
+    input:checked + .pricing-slider:before {
+        transform: translateX(26px);
+    }
+
+    .calculator-option {
+        cursor: pointer;
+        transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+        border: 2px solid #e0e7ff;
+        background: #f8fafc;
+        box-shadow: 0 1px 4px 0 rgba(99,102,241,0.04);
+        border-radius: 1rem;
+        padding: 1.5rem 1rem;
+        min-height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .calculator-option:hover {
+        border-color: #6366F1;
+        background: #eef2ff;
+        box-shadow: 0 4px 16px 0 rgba(99,102,241,0.09);
+    }
+    .calculator-option.selected {
+        border-color: #6366F1;
+        background: linear-gradient(120deg, #eef2ff 80%, #e0e7ff 100%);
+        box-shadow: 0 8px 24px 0 rgba(99,102,241,0.13);
+    }
+
+    .feature-checkbox {
+        accent-color: #6366F1;
+        margin-right: 0.5rem;
+        width: 1.2em;
+        height: 1.2em;
+        border-radius: 0.3em;
+        border: 1.5px solid #c7d2fe;
+        transition: border-color 0.2s;
+    }
+    .feature-checkbox:checked {
+        border-color: #6366F1;
+        box-shadow: 0 2px 8px 0 rgba(99,102,241,0.10);
+    }
+    .feature-checkbox:checked + span {
+        color: #6366F1;
+        font-weight: 500;
+    }
+
+    /* Maintenance radio styles */
+    input[type="radio"]:checked {
+        accent-color: #6366F1;
+    }
+
+    /* Glow effect for buttons */
+    .shadow-glow, .bg-indigo-600 {
+        transition: box-shadow 0.2s, background 0.2s;
+    }
+    .shadow-glow:hover, .bg-indigo-600:hover {
+        box-shadow: 0 0 24px 0 rgba(99,102,241,0.25), 0 2px 8px 0 rgba(0,0,0,0.04);
+        background: #4f46e5 !important;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .animate-fadeIn {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    /* Custom scrollbar for terms/privacy */
+    .bg-gray-50::-webkit-scrollbar {
+        width: 8px;
+        background: #e0e7ff;
+        border-radius: 8px;
+    }
+    .bg-gray-50::-webkit-scrollbar-thumb {
+        background: #6366f1;
+        border-radius: 8px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+        .hero-section {
+            min-height: 60vh;
+            border-radius: 0 0 1rem 1rem;
+        }
+        .service-card {
+            padding: 1.5rem !important;
+        }
+        .service-icon {
+            height: 48px;
+            width: 48px;
+            font-size: 1.5rem;
+        }
+        .calculator-option {
+            min-height: 80px;
+            padding: 1rem 0.5rem;
+        }
+    }
+
+    /* Mobile menu animation */
+    #mobile-menu {
+        animation: fadeIn 0.4s cubic-bezier(.4,0,.2,1);
+        background: linear-gradient(120deg, #fff 80%, #eef2ff 100%);
+        border-radius: 0 0 1rem 1rem;
+        box-shadow: 0 8px 32px 0 rgba(99,102,241,0.09);
+    }
+
+    /* Contact form focus */
+    input:focus, textarea:focus, select:focus {
+        outline: none;
+        border-color: #6366F1;
+        box-shadow: 0 0 0 2px #6366F1;
+        background: #eef2ff;
+        transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    /* Footer social icons */
+    footer .fab, footer .fas {
+        transition: color 0.2s, transform 0.2s;
+    }
+    footer a:hover .fab, footer a:hover .fas {
+        color: #6366F1 !important;
+        transform: scale(1.15) rotate(-8deg);
+    }
+
+    /* Section headings */
+    section h2, section h3 {
+        letter-spacing: 0.5px;
+        position: relative;
+        z-index: 1;
+    }
+    section h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #6366F1 0%, #8B5CF6 100%);
+        border-radius: 2px;
+        margin: 0.5rem auto 0;
+        opacity: 0.7;
+    }
+
+    /* Subtle hover for links */
+    a {
+        transition: color 0.18s, text-decoration 0.18s;
+    }
+    a:hover {
+        color: #6366F1;
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center">
+          <img src="Line Tech Logo 2.png" alt="Line Tech Logo" class="h-8 w-8 md:h-10 md:w-10 mr-2 rounded-full object-contain shadow-sm bg-white border border-gray-200" />
+          <span class="text-indigo-600 text-2xl font-bold">Line Tech Softwares</span>
+        </div>
+        
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="font-medium hover:text-indigo-600 transition">Home</a>
+          <a href="#services" class="font-medium hover:text-indigo-600 transition">Services</a>
+          <a href="#calculator" class="font-medium hover:text-indigo-600 transition">Website Calculator</a>
+          <a href="#about" class="font-medium hover:text-indigo-600 transition">About Us</a>
+          <a href="#contact" class="font-medium hover:text-indigo-600 transition">Contact</a>
+        </div>
+        
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-button" class="text-gray-500 hover:text-indigo-600 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden mt-3 pb-2 animate-fadeIn">
+        <a href="#home" class="block py-2 px-4 text-sm hover:bg-indigo-50 hover:text-indigo-600 rounded-md">Home</a>
+        <a href="#services" class="block py-2 px-4 text-sm hover:bg-indigo-50 hover:text-indigo-600 rounded-md">Services</a>
+        <a href="#calculator" class="block py-2 px-4 text-sm hover:bg-indigo-50 hover:text-indigo-600 rounded-md">Website Calculator</a>
+        <a href="#about" class="block py-2 px-4 text-sm hover:bg-indigo-50 hover:text-indigo-600 rounded-md">About Us</a>
+        <a href="#contact" class="block py-2 px-4 text-sm hover:bg-indigo-50 hover:text-indigo-600 rounded-md">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section flex items-center justify-center relative pt-16">
+    <div class="container mx-auto text-center px-4">
+      <h1 class="text-4xl md:text-6xl text-white font-bold mb-6">Plug into Possibility</h1>
+      <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">Your one-stop solution for all your IT needs. From software installation to custom website development, we've got you covered.</p>
+      <a href="#services" class="bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-indigo-700 transition shadow-lg shadow-glow">Explore Our Services</a>
+    </div>
+    <div class="scroll-indicator text-white">
+      <i class="fas fa-chevron-down text-2xl"></i>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Explore our comprehensive range of IT services designed to meet all your technological needs.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+       <!-- Microsoft Installation -->
+<!-- Microsoft Installation -->
+<div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+  <div class="service-icon mb-4">
+    <i class="fab fa-windows text-white text-2xl"></i>
+  </div>
+  <h3 class="text-xl font-bold mb-4">Microsoft Installation + Free Office Suite</h3>
+  <p class="text-gray-600 mb-6">
+    Professional Windows installation with all necessary drivers, essential software, and the full Microsoft Office suite (Word, Excel, PowerPoint) for <strong>free</strong>! Save big compared to official Microsoft pricing.
+  </p>
+
+  <div class="space-y-3 mb-6">
+    <!-- Pricing and savings table -->
+    <div class="flex justify-between">
+      <span>Student</span>
+      <div class="text-right">
+        <span class="line-through text-gray-400 mr-2">R1500</span>
+        <span class="font-semibold text-indigo-600">R750</span>
+        <span class="text-green-500 text-sm ml-2">Save R750!</span>
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <span>Personal Use</span>
+      <div class="text-right">
+        <span class="line-through text-gray-400 mr-2">R3000</span>
+        <span class="font-semibold text-indigo-600">R1400</span>
+        <span class="text-green-500 text-sm ml-2">Save R1600!</span>
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <span>Business</span>
+      <div class="text-right">
+        <span class="line-through text-gray-400 mr-2">R4500</span>
+        <span class="font-semibold text-indigo-600">R2200</span>
+        <span class="text-green-500 text-sm ml-2">Save R2300!</span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">
+    Get Started
+  </a>
+</div>
+
+  <!-- Linux Installation -->
+<div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+  <div class="service-icon">
+    <i class="fab fa-linux text-white text-2xl"></i>
+  </div>
+  <h3 class="text-xl font-bold mb-4">Linux Installation</h3>
+  <p class="text-gray-600 mb-6">Switch to Linux with our expert installation service. Perfect alternative to Windows.</p>
+  <div class="space-y-4 mb-6">
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Basic Setup - R1000</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Core Linux installation</li>
+        <li>Default desktop environment</li>
+        <li>Essential drivers</li>
+      </ul>
+    </div>
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Standard Setup - R1500</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Everything in Basic</li>
+        <li>System updates & security patches</li>
+        <li>Common utilities & apps installed</li>
+        <li>Minor customization options</li>
+      </ul>
+    </div>
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Advanced Setup - R2000</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Everything in Standard</li>
+        <li>Full optimization & tweaks</li>
+        <li>Productivity tools & optional software</li>
+        <li>Custom configuration per user needs</li>
+      </ul>
+    </div>
+  </div>
+  <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Get Started</a>
+</div>
+
+
+<!-- Laptop Password Recovery & Security -->
+<div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+  <div class="service-icon">
+    <i class="fas fa-shield-alt text-white text-2xl"></i>
+  </div>
+  <h3 class="text-xl font-bold mb-4">Laptop Password Recovery & Security</h3>
+  <p class="text-gray-600 mb-6">Recover passwords, flush your laptop, and secure it with enterprise-grade protections.</p>
+  
+  <div class="space-y-4 mb-6">
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Password Recovery - R1500</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Complete laptop password retrieval</li>
+        <li>Reset local & admin accounts safely</li>
+      </ul>
+    </div>
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Premium Security Setup - R2500</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Professional antivirus & firewall installation</li>
+        <li>Malware scans and threat assessment</li>
+        <li>System updates & patches</li>
+      </ul>
+    </div>
+    <div class="border rounded-lg p-4">
+      <h4 class="font-semibold mb-1">Elite Security & Monitoring - R4000</h4>
+      <ul class="text-gray-600 list-disc list-inside text-sm">
+        <li>Everything in Premium Security</li>
+        <li>Real-time threat monitoring</li>
+        <li>Advanced system hardening</li>
+        <li>Custom security configurations tailored to your needs</li>
+      </ul>
+    </div>
+  </div>
+  
+  <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Get Started</a>
+</div>
+
+        
+        <!-- Website Development -->
+        <div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Website Development</h3>
+          <p class="text-gray-600 mb-6">Custom-built websites designed to meet your specific needs - whether for business, personal use or influencer branding.</p>
+          <div class="mb-6">
+            <p class="font-semibold">Price varies based on customization</p>
+            <p class="text-sm text-gray-500">Use our calculator below to get an estimate</p>
+          </div>
+          <a href="#calculator" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Calculate Price</a>
+        </div>
+        
+        <!-- App Development -->
+        <div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">App Development</h3>
+          <p class="text-gray-600 mb-6">Mobile applications for Android and iOS platforms tailored to your business or personal requirements.</p>
+          <div class="mb-6">
+            <p class="font-semibold">Price varies based on features</p>
+            <p class="text-sm text-gray-500">Use our calculator below to get an estimate</p>
+          </div>
+          <a href="#calculator" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Calculate Price</a>
+        </div>
+        
+        <!-- IT Consulting -->
+        <div class="service-card bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+          <div class="service-icon">
+            <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4">IT Consulting</h3>
+          <p class="text-gray-600 mb-6">Expert advice on technology solutions, security assessments, and digital transformation strategies.</p>
+          <div class="mb-6">
+            <p class="font-semibold">Custom quotes based on requirements</p>
+          </div>
+          <a href="#contact" class="block text-center bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Website/App Calculator Section -->
+ <section id="calculator" class="py-20 bg-gray-50" x-data="calculatorData()">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Website & App Pricing Calculator</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Get an instant estimate for your custom website or app. Select your requirements below. Hover for more info.</p>
+    </div>
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+      
+      <!-- Project Type -->
+      <div class="mb-8 text-center">
+        <h3 class="text-lg font-semibold mb-4">Project Type</h3>
+        <div class="flex justify-center items-center gap-4 mb-2">
+          <span :class="{ 'font-bold text-indigo-600': !isApp }">Website</span>
+          <label class="pricing-toggle cursor-pointer">
+            <input type="checkbox" x-model="isApp" @change="toggleProjectType" class="hidden">
+            <span class="pricing-slider block w-14 h-8 rounded-full bg-gray-300 relative transition-all"></span>
+          </label>
+          <span :class="{ 'font-bold text-indigo-600': isApp }">Mobile App</span>
+        </div>
+        <p class="text-gray-500 text-sm">Choose between website or mobile app development</p>
+      </div>
+
+      <!-- Purpose -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4">Package Type</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div @click="selectProjectPurpose('personal')" 
+               :class="{'border-indigo-600 bg-indigo-50': projectPurpose==='personal'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-user text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Basic</p>
+            <p class="text-sm text-gray-500">Simple showcase, manual orders</p>
+          </div>
+          <div @click="selectProjectPurpose('business')" 
+               :class="{'border-indigo-600 bg-indigo-50': projectPurpose==='business'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-briefcase text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Standard</p>
+            <p class="text-sm text-gray-500">Online store, payment gateway, videos</p>
+          </div>
+          <div @click="selectProjectPurpose('influencer')" 
+               :class="{'border-indigo-600 bg-indigo-50': projectPurpose==='influencer'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-star text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Premium</p>
+            <p class="text-sm text-gray-500">Advanced features, marketing & subscriptions</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design Style -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4">Design Style</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div @click="selectDesignStyle('simple')" 
+               :class="{'border-indigo-600 bg-indigo-50': designStyle==='simple'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-feather text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Simple & Clean</p>
+          </div>
+          <div @click="selectDesignStyle('modern')" 
+               :class="{'border-indigo-600 bg-indigo-50': designStyle==='modern'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-laptop text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Modern & Professional</p>
+          </div>
+          <div @click="selectDesignStyle('premium')" 
+               :class="{'border-indigo-600 bg-indigo-50': designStyle==='premium'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-gem text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Premium & Custom</p>
+          </div>
+        </div>
+      </div>
+
+          <!-- Add-ons -->
+   <!-- Add-ons -->
+<div class="mb-8">
+  <h3 class="text-lg font-semibold mb-4">Optional Features / Add-ons</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.ecommerce" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        E-commerce Functionality
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.userAuth" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        User Login / Accounts
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.apiIntegration" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        API Integration
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.seo" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        SEO Optimization
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.cms" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        Content Management
+      </label>
+    </div>
+
+    <div class="border rounded-lg p-4">
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" x-model="features.multiLanguage" @change="calculateTotal" class="mr-2 h-5 w-5 text-indigo-600">
+        Multi-language Support
+      </label>
+    </div>
+
+  </div>
+  <p class="text-sm text-gray-500 mt-2">Choosing **no maintenance** increases the cost of these features, especially if urgent.</p>
+</div>
+
+      <!-- Turnaround -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4">Turnaround Time</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div @click="selectTurnaround('standard')" 
+               :class="{'border-indigo-600 bg-indigo-50': turnaround==='standard'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-calendar text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Standard</p>
+            <p class="text-sm text-gray-500">3–4 weeks</p>
+          </div>
+          <div @click="selectTurnaround('expedited')" 
+               :class="{'border-indigo-600 bg-indigo-50': turnaround==='expedited'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-calendar-minus text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Expedited</p>
+            <p class="text-sm text-gray-500">1–2 weeks (+30%)</p>
+          </div>
+          <div @click="selectTurnaround('urgent')" 
+               :class="{'border-indigo-600 bg-indigo-50': turnaround==='urgent'}"
+               class="calculator-option border rounded-lg p-4 text-center cursor-pointer">
+            <i class="fas fa-bolt text-2xl mb-2 text-indigo-600"></i>
+            <p class="font-medium">Urgent</p>
+            <p class="text-sm text-gray-500">Under 1 week (+60%)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maintenance -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold mb-4">Maintenance Options</h3>
+        <div class="flex items-center gap-6 mb-4">
+          <label class="flex items-center cursor-pointer">
+            <input type="radio" x-model="maintenanceInterval" value="none" @change="calculateTotal" class="mr-2">No Maintenance
+          </label>
+          <label class="flex items-center cursor-pointer">
+            <input type="radio" x-model="maintenanceInterval" value="monthly" @change="calculateTotal" class="mr-2">Monthly
+          </label>
+          <label class="flex items-center cursor-pointer">
+            <input type="radio" x-model="maintenanceInterval" value="yearly" @change="calculateTotal" class="mr-2">Yearly
+          </label>
+        </div>
+      </div>
+
+        <!-- Total -->
+  <div class="bg-indigo-50 p-6 rounded-lg mb-8 text-center">
+    <h3 class="text-xl font-bold mb-2">Estimated Total</h3>
+    <p class="text-2xl font-bold text-indigo-600">R<span x-text="totalPrice"></span></p>
+    <p class="text-sm text-gray-500 mt-2">
+      Selected Add-ons: <span x-text="selectedAddOns.join(', ') || 'None'"></span>
+    </p>
+    <p class="text-sm text-gray-500 mt-2">This is an estimate. Final pricing may vary based on your specific requirements. We’ll explain every step!</p>
+  </div>
+
+      <!-- Buttons -->
+      <div class="flex justify-between">
+        <button @click="resetCalculator()" class="bg-gray-200 text-gray-800 py-2 px-6 rounded-md hover:bg-gray-300 transition">Reset</button>
+        <button @click="downloadPDF()" class="bg-indigo-600 text-white py-2 px-6 rounded-md hover:bg-indigo-700 transition">Download Quote PDF</button>
+      </div>
+
+      <!--download bar/status-->
+      <!-- Download status & progress bar -->
+    <div class="mt-4">
+      <p class="text-sm text-gray-500" x-text="downloadStatus"></p>
+      <div class="w-full bg-gray-200 rounded-full h-3 mt-1">
+        <div class="bg-indigo-600 h-3 rounded-full transition-all" :style="'width:' + downloadProgress + '%'" ></div>
+      </div>
+    </div>
+
+
+    </div>
+  </div>
+</section>
+
+  <section id="about" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="flex flex-col md:flex-row items-center md:items-start md:gap-12">
+        <!-- Left: Info -->
+        <div class="md:w-1/2 text-center md:text-left">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-600">About Line Tech</h2>
+          <p class="text-gray-700 mb-8">
+            At Line Tech, we are committed to helping individuals and businesses navigate the complex world of technology. 
+            Our mission is to make technology accessible, reliable, and powerful for everyone.
+          </p>
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800">Why Choose Us?</h3>
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Expert team with years of experience in IT solutions</li>
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Tailored services to meet your specific needs</li>
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Transparent pricing with no hidden costs</li>
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Ongoing support and maintenance for all our services</li>
+            <li class="flex items-start"><span class="mr-2 text-indigo-600">•</span>Commitment to using the latest technologies and best practices</li>
+          </ul>
+        </div>
+        <!-- Right: Image -->
+        <div class="md:w-1/2 mt-8 md:mt-0 flex flex-col items-center">
+          <img src="https://media.licdn.com/dms/image/v2/D4D12AQEeqFKpaDA6VQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1711258174043?e=2147483647&v=beta&t=Vldq2CWNwytdA0XwepLNnXH1RuC3xEU0k8Nexf-8IKw" 
+               alt="Team working together" 
+               class="rounded-lg shadow-xl mx-auto max-w-xs md:max-w-sm">
+          <p class="text-xs text-gray-500 mt-2 text-center">
+            Image by <a href="https://www.linkedin.com/pulse/collaborative-coding-practices-sabeeka-lambe-tagaf/" target="_blank" class="underline hover:text-indigo-600">Sabeeka Lambe</a> | Collaborative Coding Practices, March 26, 2024
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to get started? Get in touch with our team today.</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Left: Contact Form -->
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <form id="contact-form" novalidate>
+          <div class="mb-6">
+            <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+            <input type="text" id="name" name="user_name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your name" required>
+            <span id="error-name" class="text-red-500 text-sm hidden">Please enter your name.</span>
+          </div>
+          <div class="mb-6">
+            <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+            <input type="email" id="email" name="user_email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your email" required>
+            <span id="error-email" class="text-red-500 text-sm hidden">Please enter a valid email address.</span>
+          </div>
+          <div class="mb-6">
+            <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+            <div class="flex items-center">
+              <span class="mr-2 text-green-600 text-xl" title="South Africa">
+                <img src="https://flagcdn.com/za.svg" alt="ZA" class="inline-block h-6 w-8 rounded shadow-sm border border-gray-200" />
+              </span>
+              <input type="tel" id="phone" name="user_phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="e.g. 071 234 5678" pattern="^(\+27|0)[6-8][0-9]{8}$" required>
+            </div>
+            <span id="error-phone" class="text-red-500 text-sm hidden">Please enter a valid South African phone number.</span>
+          </div>
+          <div class="mb-6">
+            <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
+            <select id="service" name="user_service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <option value="">Select a service</option>
+              <option value="microsoft">Microsoft Installation</option>
+              <option value="linux">Linux Installation</option>
+              <option value="password">Password Recovery & Security</option>
+              <option value="website">Website Development</option>
+              <option value="app">App Development</option>
+              <option value="consulting">IT Consulting</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block text-gray-700 mb-2">Message <span class="text-gray-400">(optional)</span></label>
+            <textarea id="message" name="user_message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tell us more about your project or requirements"></textarea>
+          </div>
+          <button type="submit" class="bg-indigo-600 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 transition w-full flex items-center justify-center gap-2">
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+        <div id="form-success" class="mt-4 p-4 bg-green-100 text-green-700 rounded-lg hidden glossy-success">
+          Thank you for your message! We'll get back to you shortly.
+        </div>
+        <div id="form-error" class="mt-4 p-4 bg-red-100 text-red-700 rounded-lg hidden glossy-error">
+          Please fix the errors above and try again.
+        </div>
+        <style>
+  .glossy-success {
+    background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%);
+    box-shadow: 0 4px 24px rgba(16,185,129,0.18), 0 2px 8px rgba(0,0,0,0.08);
+    border: 2px solid #34d399;
+    position: relative;
+    overflow: hidden;
+    color: #065f46;
+    font-weight: 600;
+  }
+  .glossy-success::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%);
+    border-radius: 0 0 1rem 1rem;
+    pointer-events: none;
+  }
+  .glossy-error {
+    background: linear-gradient(135deg, #fee2e2 0%, #f87171 100%);
+    box-shadow: 0 4px 24px rgba(239,68,68,0.18), 0 2px 8px rgba(0,0,0,0.08);
+    border: 2px solid #ef4444;
+    position: relative;
+    overflow: hidden;
+    color: #b91c1c;
+    font-weight: 600;
+  }
+  .glossy-error::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%);
+    border-radius: 0 0 1rem 1rem;
+    pointer-events: none;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init('Ek4O3pznjchURi7UR');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const errorName = document.getElementById('error-name');
+    const errorEmail = document.getElementById('error-email');
+    const errorPhone = document.getElementById('error-phone');
+    const formSuccess = document.getElementById('form-success');
+    const formError = document.getElementById('form-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      // Name validation
+      if (!nameInput.value.trim()) {
+        errorName.classList.remove('hidden');
+        valid = false;
+      } else {
+        errorName.classList.add('hidden');
+      }
+
+      // Email validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailInput.value.trim() || !emailPattern.test(emailInput.value.trim())) {
+        errorEmail.classList.remove('hidden');
+        valid = false;
+      } else {
+        errorEmail.classList.add('hidden');
+      }
+
+      // Phone validation (South Africa)
+      const phonePattern = /^(\+27|0)[6-8][0-9]{8}$/;
+      if (!phoneInput.value.trim() || !phonePattern.test(phoneInput.value.trim().replace(/\s+/g, ''))) {
+        errorPhone.classList.remove('hidden');
+        valid = false;
+      } else {
+        errorPhone.classList.add('hidden');
+      }
+
+      if (!valid) {
+        formSuccess.classList.add('hidden');
+        formError.classList.remove('hidden');
+        formError.classList.add('glossy-error');
+        formError.textContent = 'Please fix the errors above and try again.';
+        return;
+      }
+
+      // Clear previous messages
+      formSuccess.classList.add('hidden');
+      formError.classList.add('hidden');
+
+      try {
+        await emailjs.sendForm(
+          'service_qch7mf5',     // Service ID
+          'template_9lgbc28',    // Template ID
+          form,
+          'Ek4O3pznjchURi7UR'    //  Public Key
+        );
+
+        formSuccess.classList.remove('hidden');
+        formSuccess.classList.add('glossy-success');
+        formSuccess.textContent = "Thank you! Your message was sent successfully. We'll get back to you soon.";
+        form.reset();
+      } catch (error) {
+        console.error('EmailJS Error:', error);
+        formError.classList.remove('hidden');
+        formError.classList.add('glossy-error');
+        formError.textContent = "Oops! Something went wrong. Please try again in a moment or contact us directly.";
+      }
+    });
+  });
+</script>
+
+      </div>
+      <!-- Right: Contact Info & Business Hours -->
+      <div class="flex flex-col h-full">
+        <div>
+          <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                <i class="fas fa-map-marker-alt text-indigo-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Our Location</h4>
+                <p class="text-gray-600">Pretoria, South Africa</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-indigo-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Email Us</h4>
+                <p class="text-gray-600 relative group">
+                  <span id="contact-email" class="inline-block transition-colors duration-200 hover:text-indigo-600 focus:text-indigo-600 cursor-pointer">
+                    info@linetechsoftwares.co.za
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                <i class="fas fa-phone-alt text-indigo-600"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold">Call Us</h4>
+                <p class="text-gray-600">
+                  <span class="block">For all inquiries, please contact:</span>
+               
+                  <span class="block">
+                    <a href="tel:+27711831818" class="hover:text-indigo-600 transition">
+                      +27 71 183 1818
+                    </a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 bg-indigo-600 rounded-xl p-8 text-white">
+          <h3 class="text-xl font-bold mb-4">Business Hours</h3>
+          <ul class="space-y-2">
+            <li class="flex justify-between">
+              <span>Monday - Friday:</span>
+              <span>9:00 AM - 5:00 PM</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Saturday - Sunday:</span>
+              <span>Closed</span>
+            </li>
+          </ul>
+          <div class="mt-6 flex flex-col items-center">
+            <div class="flex justify-between w-full max-w-xs mb-2">
+              <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
+                <i class="fab fa-facebook-f text-xl"></i>
+              </span>
+              <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
+                <i class="fab fa-twitter text-xl"></i>
+              </span>
+              <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
+                <i class="fab fa-instagram text-xl"></i>
+              </span>
+              <span class="text-white opacity-60 cursor-not-allowed flex-1 text-center">
+                <i class="fab fa-linkedin-in text-xl"></i>
+              </span>
+            </div>
+            <span class="text-sm text-indigo-100 bg-indigo-700 px-3 py-1 rounded">
+              Social media accounts coming soon!
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  <!-- Terms and Privacy Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Terms & Conditions</h2>
+          <div class="bg-gray-50 p-6 rounded-lg h-96 overflow-y-auto">
+            <h3 class="font-semibold text-lg mb-3">1. Acceptance of Terms</h3>
+            <p class="text-gray-600 mb-4">By accessing and using Line Tech's services, you agree to be bound by these Terms and Conditions.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">2. Service Provision</h3>
+            <p class="text-gray-600 mb-4">Line Tech provides IT services as outlined on our website. We reserve the right to modify or discontinue any service at any time.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">3. Pricing and Payment</h3>
+            <p class="text-gray-600 mb-4">All prices are in South African Rand (ZAR) and subject to change without notice. Payment terms will be specified in individual service agreements.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">4. Warranties and Limitations</h3>
+            <p class="text-gray-600 mb-4">Services are provided "as is" without warranty of any kind. Line Tech is not liable for any indirect, incidental, or consequential damages.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">5. Client Responsibilities</h3>
+            <p class="text-gray-600 mb-4">Clients are responsible for providing accurate information, maintaining security of their systems, and complying with all applicable laws.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">6. Intellectual Property</h3>
+            <p class="text-gray-600 mb-4">All intellectual property rights related to services provided remain the property of Line Tech unless otherwise specified in writing.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">7. Governing Law</h3>
+            <p class="text-gray-600">These terms are governed by the laws of South Africa.</p>
+          </div>
+        </div>
+        
+        <div>
+          <h2 class="text-2xl font-bold mb-6" section id="privacy-policy">Privacy Policy</h2>
+          <div class="bg-gray-50 p-6 rounded-lg h-96 overflow-y-auto">
+            <h3 class="font-semibold text-lg mb-3">1. Information We Collect</h3>
+            <p class="text-gray-600 mb-4">We collect personal information such as name, email, phone number, and service preferences when you contact us or use our services.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">2. How We Use Information</h3>
+            <p class="text-gray-600 mb-4">Your information is used to provide and improve our services, communicate with you, and process transactions.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">3. Information Security</h3>
+            <p class="text-gray-600 mb-4">We implement appropriate security measures to protect your personal information from unauthorized access or disclosure.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">4. Information Sharing</h3>
+            <p class="text-gray-600 mb-4">We do not sell, trade, or otherwise transfer your personal information to outside parties unless required for service provision.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">5. Cookies and Tracking</h3>
+            <p class="text-gray-600 mb-4">Our website may use cookies to enhance user experience. You can choose to disable cookies in your browser settings.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">6. Your Rights</h3>
+            <p class="text-gray-600 mb-4">You have the right to access, correct, or delete your personal information. Contact us to exercise these rights.</p>
+            
+            <h3 class="font-semibold text-lg mb-3">7. Policy Updates</h3>
+            <p class="text-gray-600">This privacy policy may be updated periodically. The latest version will be posted on our website.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Line Tech</h3>
+          <p class="text-gray-400 mb-4">Plug into Possibility</p>
+          <div class="flex space-x-4">
+            <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+            <li><a href="#calculator" class="text-gray-400 hover:text-white transition">Pricing Calculator</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li><a href="#services" class="text-gray-400 hover:text-white transition">Microsoft Installation</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition">Linux Installation</a></li>
+            <li><a href="#services" class="text-gray-400 hover:text-white transition">Password Recovery</a></li>
+            <li><a href="#calculator" class="text-gray-400 hover:text-white transition">Website Development</a></li>
+            <li><a href="#calculator" class="text-gray-400 hover:text-white transition">App Development</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fas fa-map-marker-alt mr-2 text-indigo-400"></i>
+              <span class="text-gray-400">Pretoria, South Africa</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope mr-2 text-indigo-400"></i>
+              <span class="text-gray-400">info@linetechsoftwares.co.za
+                <span class="relative group cursor-pointer ml-1 align-super">
+                
+                </span>
+              </span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone-alt mr-2 text-indigo-400"></i>
+              <span class="text-gray-400">+27 71 183 1818</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 mt-10 pt-6 text-center">
+        <p class="text-gray-500">© 2025 Line Tech Softwares. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script id="app-script" defer>
+function calculatorData() {
+  return {
+    isApp: false,
+    projectPurpose: '',
+    designStyle: '',
+    turnaround: '',
+    features: {
+      ecommerce: false,
+      userAuth: false,
+      apiIntegration: false,
+      seo: false,
+      cms: false,
+      multiLanguage: false
+    },
+    featureLabels: {
+      ecommerce: 'E-commerce Functionality',
+      userAuth: 'User Login/Accounts',
+      apiIntegration: 'API Integration',
+      seo: 'SEO Optimization',
+      cms: 'Content Management',
+      multiLanguage: 'Multi-language Support'
+    },
+    maintenanceInterval: 'none',
+    maintenancePlan: null,
+    maintenanceRates: {
+      monthly: {
+        personal: { basic: 600, premium: 1200 },
+        business: { basic: 1000, premium: 1550 },
+        influencer: { basic: 400, premium: 1400 }
+      },
+      yearly: {
+        personal: 6000,
+        business: 7600,
+        influencer: 5000
+      }
+    },
+    totalPrice: 0,
+    downloadStatus: '',
+    downloadProgress: 0,
+
+    get selectedAddOns() {
+      return Object.keys(this.features)
+        .filter(k => this.features[k])
+        .map(k => this.featureLabels[k]);
+    },
+
+    toggleProjectType() { this.calculateTotal(); },
+    selectProjectPurpose(purpose) { this.projectPurpose = purpose; this.calculateTotal(); },
+    selectDesignStyle(style) { this.designStyle = style; this.calculateTotal(); },
+    selectTurnaround(time) { this.turnaround = time; this.calculateTotal(); },
+
+    calculateTotal() {
+      if (!this.projectPurpose || !this.designStyle || !this.turnaround) return;
+
+      let basePrice = !this.isApp
+        ? (this.projectPurpose === 'personal' ? 3000 : this.projectPurpose === 'business' ? 5000 : 4000)
+        : (this.projectPurpose === 'personal' ? 6000 : this.projectPurpose === 'business' ? 10000 : 8000);
+
+      let multiplier = this.designStyle === 'simple' ? 1 : this.designStyle === 'modern' ? 1.5 : 2;
+      basePrice *= multiplier;
+
+      let addOns = 0;
+      for (let key in this.features) {
+        if (this.features[key]) {
+          addOns += this.maintenanceInterval === 'none'
+            ? (key==='ecommerce'?3500:key==='userAuth'?2000:key==='apiIntegration'?2500:key==='seo'?2500:key==='cms'?3000:key==='multiLanguage'?2000:0)
+            : (key==='ecommerce'?2000:key==='userAuth'?1200:key==='apiIntegration'?1500:key==='seo'?1000:key==='cms'?1800:key==='multiLanguage'?1200:0);
+        }
+      }
+
+      let turnaroundMult = this.turnaround==='standard'?1:this.turnaround==='expedited'?1.3:1.6;
+
+      let mCost = 0;
+      if (this.maintenanceInterval==='monthly' && this.maintenancePlan) {
+        const [plan, type] = this.maintenancePlan.split('-');
+        mCost = this.maintenanceRates.monthly[type][plan];
+      }
+      if (this.maintenanceInterval==='yearly' && this.maintenancePlan) {
+        const [, type] = this.maintenancePlan.split('-');
+        mCost = this.maintenanceRates.yearly[type];
+      }
+
+      this.totalPrice = Math.round((basePrice + addOns) * turnaroundMult + mCost);
+    },
+
+    resetCalculator() {
+      this.isApp=false;
+      this.projectPurpose='';
+      this.designStyle='';
+      this.turnaround='';
+      for (let key in this.features) this.features[key]=false;
+      this.maintenanceInterval='none';
+      this.maintenancePlan=null;
+      this.totalPrice=0;
+      this.downloadStatus='';
+      this.downloadProgress=0;
+    },
+
+    downloadPDF() {
+      if (!this.projectPurpose || !this.designStyle || !this.turnaround) {
+        alert("Please select project type, package, and turnaround first 🙂");
+        return;
+      }
+
+      this.downloadStatus = 'Preparing your PDF...';
+      this.downloadProgress = 10;
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const logoUrl = 'Line Tech Logo 2.png';
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.src = logoUrl;
+
+      const progressInterval = setInterval(() => {
+        if (this.downloadProgress < 90) this.downloadProgress += 5;
+      }, 100);
+
+      img.onload = () => {
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0);
+          const imgData = canvas.toDataURL('image/png');
+
+          doc.addImage(imgData, 'PNG', 10, 10, 40, 20);
+          this.downloadProgress = 95;
+
+          doc.setFontSize(14);
+          doc.text("Line Tech Softwares - Project Quote", 10, 40);
+          doc.setFontSize(12);
+          doc.text(`Project Type: ${this.isApp?'Mobile App':'Website'}`, 10, 50);
+          doc.text(`Package: ${this.projectPurpose.charAt(0).toUpperCase()+this.projectPurpose.slice(1)}`, 10, 58);
+          doc.text(`Design: ${this.designStyle}`, 10, 66);
+          doc.text(`Turnaround: ${this.turnaround} (multiplier applied)`, 10, 74);
+          doc.text(`Add-ons: ${this.selectedAddOns.join(', ') || 'None'}`, 10, 82);
+          doc.text(`Maintenance: ${this.maintenanceInterval} ${this.maintenancePlan || ''}`, 10, 90);
+          doc.text(`Estimated Total: R${this.totalPrice}`, 10, 98);
+          doc.text("This is an estimate. Final cost may vary based on your requirements.", 10, 110);
+
+          // Line Tech Contact Info
+          doc.setFontSize(12);
+doc.text("Contact:", 10, 120);
+
+doc.text("PA: Keabetswe Kgaoane", 10, 136);
+doc.text("+27 71 183 1818", 10, 144);
+doc.text("Email: info@linetechsoftwares.co.za", 10, 152);
+
+          doc.save('LineTech_Quote.pdf');
+          clearInterval(progressInterval);
+          this.downloadProgress = 100;
+          this.downloadStatus = 'PDF downloaded successfully ✅';
+        } catch(err) {
+          clearInterval(progressInterval);
+          this.downloadProgress = 0;
+          this.downloadStatus = "Oops! Something went wrong 😅. It's not your fault.";
+          console.error(err);
+        }
+      };
+
+      img.onerror = () => {
+        clearInterval(progressInterval);
+        this.downloadProgress = 0;
+        this.downloadStatus = "Could not load logo. Please try again.";
+      };
+    }
+  }
+}
+    // Move the Alpine.data registration inside DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Register Alpine data component after Alpine is available
+      if (window.Alpine && typeof Alpine.data === 'function') {
+        Alpine.data('calculatorData', calculatorData);
+        Alpine.start();
+      } else {
+        console.error('Alpine is not defined.');
+      }
+      
+      // Mobile menu toggle
+      document.getElementById('mobile-menu-button')
+        .addEventListener('click', e => {
+          document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+      
+     
+     
+      });
+
+  </script>
+  
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg rounded-xl px-6 py-4 flex flex-col md:flex-row items-center gap-4 border border-gray-200"
+    style="display:none; min-width:280px; max-width:95vw;">
+    <div class="flex-1 text-gray-700 text-sm">
+      This site uses cookies to enhance your experience and for analytics (Google Analytics). No personal data is sold or shared. By clicking "Okay", you consent to our use of cookies. <a href="#privacy-policy" class="text-indigo-600 underline">Learn more</a>
+    </div>
+    <button id="cookie-ok" class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition">Okay</button>
+  </div>
+  <script>
+  (function() {
+    const banner = document.getElementById('cookie-banner');
+    const btn = document.getElementById('cookie-ok');
+    const cookieKey = 'lt_cookie_consent';
+    // Check if consent exists and is less than 1 year old
+    function shouldShowBanner() {
+      try {
+        const consent = JSON.parse(localStorage.getItem(cookieKey));
+        if (!consent) return true;
+        const now = Date.now();
+        return (now - consent.time) > (365*24*60*60*1000); // 1 year
+      } catch { return true; }
+    }
+    if (shouldShowBanner()) {
+      banner.style.display = 'flex';
+    }
+    btn.addEventListener('click', function() {
+      localStorage.setItem(cookieKey, JSON.stringify({ time: Date.now() }));
+      banner.style.display = 'none';
+    });
+  })();
+  </script>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+  <script src= "tooltip.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+</body>
+</html>
