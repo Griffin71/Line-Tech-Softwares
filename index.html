@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Line Tech Softwares provides IT support, cybersecurity, backups, and software solutions for businesses in South Africa. - Plug into possibility.">
-<meta name="keywords" content="IT support South Africa, cybersecurity services, data backup, Line Tech">
+  <meta name="description" content="Line Tech Softwares - Your complete IT solution in South Africa. We provide IT support, cybersecurity, custom software development, cloud services, coding lessons, and mobile support. Plug into possibility with our professional tech services.">
+  <meta name="keywords" content="IT support South Africa, cybersecurity services, software development, cloud hosting, coding lessons, mobile support, data backup, Line Tech, custom software, application development, network security, cloud storage, programming tutoring, HTML CSS JavaScript, Python tutoring, Java tutoring, data science lessons, Pretoria coding, online coding classes, phone virus removal, OS reinstallation, Android support, iOS support">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://linetechsoftwares.co.za/">
+  <meta property="og:title" content="Line Tech Softwares - Plug into Possibility">
+  <meta property="og:description" content="Professional IT services including support, cybersecurity, software development, cloud solutions, coding lessons, and mobile support in South Africa.">
+  <meta property="og:image" content="Line Tech Logo 2.png">
 
-  <meta name="description" content="Custom software development by Line Tech Softwares. Build secure, scalable, and efficient software tailored for your business.">
-<meta name="keywords" content="software development, custom software, application development, IT solutions, Line Tech">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://linetechsoftwares.co.za/">
+  <meta property="twitter:title" content="Line Tech Softwares - Plug into Possibility">
+  <meta property="twitter:description" content="Professional IT services including support, cybersecurity, software development, cloud solutions, coding lessons, and mobile support in South Africa.">
+  <meta property="twitter:image" content="Line Tech Logo 2.png">
 
-
-  <meta name="description" content="Stay secure with Line Tech Softwares. We provide cybersecurity solutions to protect your business from threats and data breaches.">
-<meta name="keywords" content="cybersecurity, data protection, network security, Line Tech, IT security">
-
-  <meta name="description" content="Line Tech Softwares offers reliable cloud services for storage, hosting, and collaboration. Secure and scalable cloud solutions for modern businesses.">
-<meta name="keywords" content="cloud services, cloud hosting, cloud storage, business IT, Line Tech">
-
-<meta name="description" content="Expert tutoring and coding lessons by Line Tech Softwares. 1-on-1 or group sessions for HTML, CSS, JavaScript, Python, Java, Data Science, and more. Online and face-to-face in Pretoria.">
-<meta name="keywords" content="coding lessons, programming tutoring, HTML CSS JavaScript, Python tutoring, Java tutoring, data science lessons, Pretoria coding, online coding classes, Line Tech">
-
-<meta name="description" content="Mobile phone software support by Line Tech Softwares. OS reinstallation, virus removal, account recovery, and app troubleshooting for Android and iOS.">
-<meta name="keywords" content="mobile software support, phone virus removal, OS reinstallation, Android support, iOS support, account recovery, app troubleshooting, Line Tech">
+  <!-- Favicon for local development -->
+  <link rel="icon" href="Line-Tech-Logo-2.ico" type="image/x-icon">
+  <link rel="icon" href="Line Tech Logo 2.png" type="image/png" sizes="512x512">
+  
+  <!-- Favicon for online deployment -->
+  <link rel="icon" href="/Line-Tech-Logo-2.ico" type="image/x-icon">
+  <link rel="icon" href="/Line Tech Logo 2.png" type="image/png" sizes="512x512">
 
   <title>Line Tech - Plug into Possibility</title>
   <!--Google Tracking-->
@@ -39,7 +46,7 @@
 
 
   <!-- Alpine.js -->
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.1/cdn.min.js"></script>
 
 <!-- jsPDF -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -53,7 +60,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.1/cdn.min.js" defer></script>
 <style id="app-style">
     /* Base font and smooth scrolling */
     body {
@@ -74,6 +80,12 @@
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
         border-radius: 0 0 2rem 2rem;
         overflow: hidden;
+        animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
     .hero-section h1 {
         letter-spacing: 1px;
@@ -113,6 +125,7 @@
         position: relative;
         overflow: hidden;
         background: linear-gradient(120deg, #fff 80%, #f3f4f6 100%);
+        border-radius: 1rem;
     }
     .service-card:hover {
         transform: translateY(-8px) scale(1.025);
@@ -132,10 +145,11 @@
         border: 2px solid #fff;
         font-size: 2rem;
         color: #fff;
-        transition: box-shadow 0.2s;
+        transition: box-shadow 0.2s, transform 0.3s;
     }
     .service-card:hover .service-icon {
         box-shadow: 0 8px 32px 0 rgba(99,102,241,0.28);
+        transform: rotate(5deg);
     }
 
     /* CALCULATOR */
@@ -272,6 +286,27 @@
             min-height: 80px;
             padding: 1rem 0.5rem;
         }
+        /* Improve tap targets for mobile */
+        .block.py-2.px-4 {
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.25rem;
+        }
+        /* Better spacing for mobile forms */
+        input, select, textarea {
+            margin-bottom: 1rem;
+            padding: 0.75rem !important;
+            font-size: 16px !important; /* Prevents iOS zoom on focus */
+        }
+        /* Improve mobile buttons */
+        button, .button, [type="button"] {
+            padding: 0.75rem 1.25rem !important;
+            min-height: 3rem;
+        }
+        /* Fix mobile menu spacing */
+        #mobile-menu a {
+            margin-bottom: 0.25rem;
+            border-radius: 0.5rem;
+        }
     }
 
     /* Mobile menu animation */
@@ -280,13 +315,59 @@
         background: linear-gradient(120deg, #fff 80%, #eef2ff 100%);
         border-radius: 0 0 1rem 1rem;
         box-shadow: 0 8px 32px 0 rgba(99,102,241,0.09);
+        transform-origin: top;
+        transition: all 0.3s ease;
+    }
+    
+    #mobile-menu.hidden {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    
+    #mobile-menu.block {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    /* Enhanced hover effects for desktop */
+    @media (min-width: 1024px) {
+        .service-card:hover {
+            transform: translateY(-12px) scale(1.03);
+        }
+        
+        /* Improved button hover effects */
+        .bg-indigo-600:hover {
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        /* Smoother navigation hover */
+        nav a {
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #6366F1;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
     }
 
     /* Contact form focus */
     input:focus, textarea:focus, select:focus {
         outline: none;
         border-color: #6366F1;
-        box-shadow: 0 0 0 2px #6366F1;
+        box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
         background: #eef2ff;
         transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
     }
@@ -950,6 +1031,81 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Hear from businesses and individuals who have experienced our services firsthand.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 hover:border-indigo-200 transition-all hover:shadow-xl">
+          <div class="flex items-center mb-4">
+            <div class="text-indigo-500 mr-3">
+              <i class="fas fa-quote-left text-3xl opacity-50"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Sarah Johnson</h4>
+              <p class="text-gray-600 text-sm">Small Business Owner</p>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">Line Tech completely transformed our business operations. Their custom software solution streamlined our inventory management and saved us countless hours every month.</p>
+          <div class="flex text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 hover:border-indigo-200 transition-all hover:shadow-xl">
+          <div class="flex items-center mb-4">
+            <div class="text-indigo-500 mr-3">
+              <i class="fas fa-quote-left text-3xl opacity-50"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Michael Ndlovu</h4>
+              <p class="text-gray-600 text-sm">IT Manager</p>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">The cybersecurity audit from Line Tech revealed critical vulnerabilities we weren't aware of. Their team implemented robust security measures that have kept our data safe ever since.</p>
+          <div class="flex text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-50 rounded-xl p-6 shadow-lg border border-gray-100 hover:border-indigo-200 transition-all hover:shadow-xl">
+          <div class="flex items-center mb-4">
+            <div class="text-indigo-500 mr-3">
+              <i class="fas fa-quote-left text-3xl opacity-50"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Thabo Molefe</h4>
+              <p class="text-gray-600 text-sm">Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">The coding lessons from Line Tech were exactly what I needed to jumpstart my career in tech. Their patient teaching approach and real-world projects helped me land my first developer job!</p>
+          <div class="flex text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
@@ -1301,20 +1457,26 @@
         <div>
           <h3 class="text-xl font-bold mb-4">Line Tech</h3>
           <p class="text-gray-400 mb-4">Plug into Possibility</p>
+          <!--social links-->
           <div class="flex space-x-4">
-            <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
+  <!-- Facebook removed, keeping structure the same -->
+  
+  <!-- X (Twitter) -->
+  <a href="https://x.com/linetech___" target="_blank" class="text-gray-400 hover:text-white transition">
+    <i class="fab fa-twitter"></i>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/linetechsoftwares/" target="_blank" class="text-gray-400 hover:text-white transition">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com/company/line-tech-softwares" target="_blank" class="text-gray-400 hover:text-white transition">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+</div>
+
         </div>
         
         <div>
@@ -1500,28 +1662,123 @@ function calculatorData() {
           ctx.drawImage(img, 0, 0);
           const imgData = canvas.toDataURL('image/png');
 
-          doc.addImage(imgData, 'PNG', 10, 10, 40, 20);
+          // Add logo
+          doc.addImage(imgData, 'PNG', 10, 10, 30, 30);
           this.downloadProgress = 95;
-
+          
+          // Add header
+          doc.setFillColor(99, 102, 241); // Indigo color
+          doc.rect(0, 0, 210, 8, 'F');
+          
+          // Title
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(20);
+          doc.setTextColor(99, 102, 241); // Indigo color
+          doc.text("PROJECT QUOTATION", 105, 25, { align: "center" });
+          
+          // Date
+          const today = new Date();
+          doc.setFontSize(10);
+          doc.setTextColor(100, 100, 100);
+          doc.text(`Date: ${today.toLocaleDateString()}`, 200, 10, { align: "right" });
+          doc.text("Quote Reference: LT-" + Math.floor(Math.random() * 10000), 200, 15, { align: "right" });
+          
+          // Divider
+          doc.setDrawColor(99, 102, 241);
+          doc.setLineWidth(0.5);
+          doc.line(10, 35, 200, 35);
+          
+          // Project Details
+          doc.setFont("helvetica", "bold");
           doc.setFontSize(14);
-          doc.text("Line Tech Softwares - Project Quote", 10, 40);
+          doc.setTextColor(60, 60, 60);
+          doc.text("Project Details", 10, 45);
+          
+          doc.setFont("helvetica", "normal");
           doc.setFontSize(12);
-          doc.text(`Project Type: ${this.isApp?'Mobile App':'Website'}`, 10, 50);
-          doc.text(`Package: ${this.projectPurpose.charAt(0).toUpperCase()+this.projectPurpose.slice(1)}`, 10, 58);
-          doc.text(`Design: ${this.designStyle}`, 10, 66);
-          doc.text(`Turnaround: ${this.turnaround} (multiplier applied)`, 10, 74);
-          doc.text(`Add-ons: ${this.selectedAddOns.join(', ') || 'None'}`, 10, 82);
-          doc.text(`Maintenance: ${this.maintenanceInterval} ${this.maintenancePlan || ''}`, 10, 90);
-          doc.text(`Estimated Total: R${this.totalPrice}`, 10, 98);
-          doc.text("This is an estimate. Final cost may vary based on your requirements.", 10, 110);
-
-          // Line Tech Contact Info
+          doc.setTextColor(80, 80, 80);
+          
+          // Two column layout
+          const col1 = 15;
+          const col2 = 105;
+          let y = 55;
+          
+          doc.setFont("helvetica", "bold");
+          doc.text("Project Type:", col1, y);
+          doc.setFont("helvetica", "normal");
+          doc.text(`${this.isApp ? 'Mobile Application' : 'Website'}`, col1 + 35, y);
+          
+          y += 10;
+          doc.setFont("helvetica", "bold");
+          doc.text("Package:", col1, y);
+          doc.setFont("helvetica", "normal");
+          doc.text(`${this.projectPurpose.charAt(0).toUpperCase() + this.projectPurpose.slice(1)}`, col1 + 35, y);
+          
+          y += 10;
+          doc.setFont("helvetica", "bold");
+          doc.text("Design Style:", col1, y);
+          doc.setFont("helvetica", "normal");
+          doc.text(`${this.designStyle}`, col1 + 35, y);
+          
+          y += 10;
+          doc.setFont("helvetica", "bold");
+          doc.text("Turnaround:", col1, y);
+          doc.setFont("helvetica", "normal");
+          doc.text(`${this.turnaround}`, col1 + 35, y);
+          
+          y += 10;
+          doc.setFont("helvetica", "bold");
+          doc.text("Add-ons:", col1, y);
+          doc.setFont("helvetica", "normal");
+          doc.text(`${this.selectedAddOns.join(', ') || 'None'}`, col1 + 35, y);
+          
+          y += 10;
+          doc.setFont("helvetica", "bold");
+          doc.text("Maintenance:", col1, y);
+          doc.setFont("helvetica", "normal");
+          doc.text(`${this.maintenanceInterval} ${this.maintenancePlan || ''}`, col1 + 35, y);
+          
+          // Pricing section
+          y += 20;
+          doc.setFillColor(240, 240, 250);
+          doc.rect(10, y, 190, 15, 'F');
+          
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(14);
+          doc.setTextColor(99, 102, 241);
+          doc.text("ESTIMATED TOTAL:", 15, y + 10);
+          doc.text(`R ${this.totalPrice}`, 195, y + 10, { align: "right" });
+          
+          // Notes
+          y += 25;
+          doc.setFont("helvetica", "italic");
+          doc.setFontSize(10);
+          doc.setTextColor(100, 100, 100);
+          doc.text("* This is an estimate. Final cost may vary based on specific requirements.", 10, y);
+          doc.text("* Quote valid for 30 days from the date of issue.", 10, y + 5);
+          
+          // Footer with contact info
+          y += 15;
+          doc.setFillColor(245, 245, 255);
+          doc.rect(0, y, 210, 40, 'F');
+          
+          doc.setFont("helvetica", "bold");
           doc.setFontSize(12);
-doc.text("Contact:", 10, 120);
-
-doc.text("PA: Keabetswe Kgaoane", 10, 136);
-doc.text("+27 71 183 1818", 10, 144);
-doc.text("Email: info@linetechsoftwares.co.za", 10, 152);
+          doc.setTextColor(99, 102, 241);
+          doc.text("LINE TECH SOFTWARES", 105, y + 10, { align: "center" });
+          
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(10);
+          doc.setTextColor(80, 80, 80);
+          doc.text("PA: Keabetswe Kgaoane", 105, y + 18, { align: "center" });
+          doc.text("+27 71 183 1818", 105, y + 24, { align: "center" });
+          doc.text("Email: info@linetechsoftwares.co.za", 105, y + 30, { align: "center" });
+          doc.text("www.linetechsoftwares.co.za", 105, y + 36, { align: "center" });
+          
+          // Add footer line
+          doc.setDrawColor(99, 102, 241);
+          doc.setLineWidth(0.5);
+          doc.line(10, y - 5, 200, y - 5);
 
           doc.save('LineTech_Quote.pdf');
           clearInterval(progressInterval);
@@ -1606,8 +1863,3 @@ doc.text("Email: info@linetechsoftwares.co.za", 10, 152);
 
 </body>
 </html>
-
-
-
-
-
