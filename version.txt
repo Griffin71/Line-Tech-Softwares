@@ -1,0 +1,20 @@
+Line Tech Softwares Virus Scanner - Release Notes
+
+Version 1.00 - Initial Release
+--------------------------------
+Release Date: 2025-10-25
+Key Features:
+- Comprehensive file scanning with MD5 hash checking
+- Real-time scanning progress tracking
+- Suspicious file detection based on size and type
+- Dark & light theme support
+- Detailed logging and threat reporting
+- Easy-to-use professional interface
+Known Limitations:
+- Entry-level security tool for basic antivirus protection
+- For full protection, consider professional antivirus software
+
+Download Links:
+- ZIP: https://github.com/Griffin71/Line-Tech-Softwares/raw/main/Virus-Scanner-1.00.zip
+- Release Notes Page: https://linetechsoftwares.co.za/projects/virusscanner/version.txt
+- https://github.com/Line-Tech-Softwares/Virus-Scanner/releases/tag/1.00
