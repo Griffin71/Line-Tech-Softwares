@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1115,270 +1116,251 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to get started? Get in touch with our team today.</p>
-      </div>
-      <div class="flex flex-col lg:flex-row gap-12">
-        <!-- Left: Contact Form -->
-        <div class="w-full lg:w-1/2 order-1 lg:order-1">
-          <div class="bg-white rounded-xl shadow-lg p-8 h-full flex flex-col justify-center">
-            <form id="contact-form" novalidate>
-              <div class="mb-6">
-                <label for="name" class="block text-gray-700 mb-2">Full Name</label>
-                <input type="text" id="name" name="user_name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your name" required>
-                <span id="error-name" class="text-red-500 text-sm hidden">Please enter your name.</span>
-              </div>
-              <div class="mb-6">
-                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-                <input type="email" id="email" name="user_email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your email" required>
-                <span id="error-email" class="text-red-500 text-sm hidden">Please enter a valid email address.</span>
-              </div>
-              <div class="mb-6">
-                <label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
-                <div class="flex items-center">
-                  <span class="mr-2 text-green-600 text-xl" title="South Africa">
-                    <img src="https://flagcdn.com/za.svg" alt="ZA" class="inline-block h-6 w-8 rounded shadow-sm border border-gray-200" />
-                  </span>
-                  <input type="tel" id="phone" name="user_phone" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="e.g. 071 234 5678" pattern="^(\+27|0)[6-8][0-9]{8}$" required>
+ <!-- Contact Section -->
+<section id="contact" class="py-20 bg-gradient-to-br from-gray-50 via-white to-indigo-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Contact Us</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Have questions or ready to get started? Get in touch with our team today.</p>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-12">
+      <!-- Left: Contact Form -->
+      <div class="w-full lg:w-1/2 order-1 lg:order-1">
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-8 h-full flex flex-col justify-center">
+          <form id="contact-form" novalidate>
+            <div class="mb-6">
+              <label for="name" class="block text-gray-700 font-medium mb-3">Full Name</label>
+              <input type="text" id="name" name="user_name" 
+                     class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-300 text-base" 
+                     placeholder="Your name" required>
+              <span id="error-name" class="text-red-500 text-sm hidden mt-1 block">Please enter your name.</span>
+            </div>
+
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 font-medium mb-3">Email Address</label>
+              <input type="email" id="email" name="user_email" 
+                     class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-300 text-base" 
+                     placeholder="Your email" required>
+              <span id="error-email" class="text-red-500 text-sm hidden mt-1 block">Please enter a valid email address.</span>
+            </div>
+
+            <div class="mb-6">
+              <label for="phone" class="block text-gray-700 font-medium mb-3">Phone Number</label>
+              <div class="flex items-center gap-3">
+                <div class="flex items-center bg-gray-50 px-3 py-3 rounded-xl border-2 border-gray-200">
+                  <img src="https://flagcdn.com/za.svg" alt="ZA" class="h-5 w-7 rounded shadow-sm" />
+                  <span class="ml-2 text-gray-600 font-medium">+27</span>
                 </div>
-                <span id="error-phone" class="text-red-500 text-sm hidden">Please enter a valid South African phone number.</span>
+                <input type="tel" id="phone" name="user_phone" 
+                       class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-300 text-base" 
+                       placeholder="71 234 5678" pattern="^[6-8][0-9]{8}$" required>
               </div>
-              <div class="mb-6">
-                <label for="service" class="block text-gray-700 mb-2">Service Interested In</label>
-                <select id="service" name="user_service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                  <option value="">Select a service</option>
-                  <option value="App Development">App Development</option>
-                  <option value="IT consulting">IT Consulting</option>
-                  <option value="Linux Installation">Linux Installation</option>
-                  <option value="Microsoftsoft Installation">Microsoft Installation</option>
-                  <option value="Mobile Phone Software Support">Mobile Phone Software Support</option>
-                  <option value="Other">Other</option>
-                  <option value="Password Recovery & Security">Password Recovery & Security</option>
-                  <option value="Tutoring & Coding Lessons">Tutoring & Coding Lessons</option>
-                  <option value="Website Development">Website Development</option>
-                </select>
-              </div>
-              <div class="mb-6">
-                <label for="message" class="block text-gray-700 mb-2">Message <span class="text-gray-400">(optional)</span></label>
-                <textarea id="message" name="user_message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tell us more about your project or requirements"></textarea>
-              </div>
-              <button type="submit" class="bg-indigo-600 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 transition w-full flex items-center justify-center gap-2">
+              <span id="error-phone" class="text-red-500 text-sm hidden mt-1 block">Please enter a valid South African phone number.</span>
+            </div>
+
+            <div class="mb-6">
+              <label for="service" class="block text-gray-700 font-medium mb-3">Service Interested In</label>
+              <select id="service" name="user_service" 
+                      class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-300 text-base bg-white">
+                <option value="">Select a service</option>
+                <option value="App Development">App Development</option>
+                <option value="IT consulting">IT Consulting</option>
+                <option value="Linux Installation">Linux Installation</option>
+                <option value="Microsoft Installation">Microsoft Installation</option>
+                <option value="Mobile Phone Software Support">Mobile Phone Software Support</option>
+                <option value="Other">Other</option>
+                <option value="Password Recovery & Security">Password Recovery & Security</option>
+                <option value="Tutoring & Coding Lessons">Tutoring & Coding Lessons</option>
+                <option value="Website Development">Website Development</option>
+              </select>
+            </div>
+
+            <div class="mb-8">
+              <label for="message" class="block text-gray-700 font-medium mb-3">Message <span class="text-gray-400 font-normal">(optional)</span></label>
+              <textarea id="message" name="user_message" rows="4" 
+                        class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-300 resize-none text-base" 
+                        placeholder="Tell us more about your project or requirements"></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" 
+                    class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 px-8 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 w-full flex items-center justify-center gap-3 font-medium text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+              <span id="btn-text">
                 <i class="fas fa-paper-plane"></i>
                 Send Message
-              </button>
-            </form>
-            <div id="form-success" class="mt-4 p-4 bg-green-100 text-green-700 rounded-lg hidden glossy-success">
-              Thank you for your message! We'll get back to you shortly.
-            </div>
-            <div id="form-error" class="mt-4 p-4 bg-red-100 text-red-700 rounded-lg hidden glossy-error">
-              Please fix the errors above and try again.
-            </div>
-          </div>
-        </div>
-        <!-- Right: Contact Info & Business Hours -->
-        <div class="w-full lg:w-1/2 order-2 lg:order-2 flex flex-col h-full">
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Get In Touch</h3>
-            <div class="space-y-6">
-              <div class="flex items-start">
-                <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i class="fas fa-map-marker-alt text-indigo-600"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold">Our Location</h4>
-                  <p class="text-gray-600">Pretoria, South Africa</p>
-                </div>
+              </span>
+              <div id="loading-spinner" class="hidden">
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span class="ml-2">Sending...</span>
               </div>
-              <div class="flex items-start">
-                <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i class="fas fa-envelope text-indigo-600"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold">Email Us</h4>
-                  <p class="text-gray-600 relative group">
-                    <span id="contact-email" class="inline-block transition-colors duration-200 hover:text-indigo-600 focus:text-indigo-600 cursor-pointer">
-                      info@linetechsoftwares.co.za
-                    </span>
-                  </p>
-                </div>
+            </button>
+          </form>
+
+          <!-- Success Message -->
+          <div id="form-success" class="mt-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 text-green-800 rounded-xl hidden animate-fade-in">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
               </div>
-              <div class="flex items-start">
-                <div class="bg-indigo-100 p-3 rounded-full mr-4">
-                  <i class="fas fa-phone-alt text-indigo-600"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold">Call Us</h4>
-                  <p class="text-gray-600">
-                    <span class="block">For all inquiries, please contact:</span>
-                    <span class="block">
-                      <a href="tel:+27653114090" class="hover:text-indigo-600 transition">
-                        +27 65 311 4090
-                      </a>
-                      <a href="tel:+27634438535" class="hover:text-indigo-600 transition">
-                        +27 63 443 8535
-                      </a>
-                    </span>
-                  </p>
-                </div>
+              <div class="ml-3">
+                <p class="font-medium">Message sent successfully!</p>
+                <p class="text-sm text-green-600 mt-1">Thank you for reaching out. We'll get back to you within 24 hours.</p>
               </div>
             </div>
           </div>
-          <div class="mt-8 bg-indigo-600 rounded-xl p-8 text-white">
-            <h3 class="text-xl font-bold mb-4">Business Hours</h3>
-            <ul class="space-y-2">
-              <li class="flex justify-between">
-                <span>Monday - Friday:</span>
-                <span>9:00 AM - 5:00 PM</span>
-              </li>
-              <li class="flex justify-between">
-                <span>Saturday - Sunday:</span>
-                <span>Closed</span>
-              </li>
-            </ul>
-<div class="mt-6 flex flex-col items-center">
-  <p class="text-white mb-4 text-center text-lg">
-    Connect with us on our social platforms and stay updated with Line Tech!
-  </p>
-  
-  <div class="flex justify-center space-x-8">
-    
-    <!-- Twitter (as X) -->
-    <a href="https://x.com/linetech___" target="_blank" 
-       class="transition transform hover:scale-125 hover:shadow-lg hover:shadow-gray-400 rounded-full p-2">
-      <i class="fab fa-twitter text-4xl" style="color: #1DA1F2;"></i>
-    </a>
 
-    <!-- Instagram Gradient -->
-    <a href="https://www.instagram.com/linetechsoftwares/" target="_blank" 
-       class="transition transform hover:scale-125 hover:shadow-lg hover:shadow-pink-500 rounded-full p-2">
-      <i class="fab fa-instagram text-4xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 
-                 bg-clip-text text-transparent"></i>
-    </a>
-
-    <!-- LinkedIn Brighter -->
-    <a href="https://linkedin.com/company/line-tech-softwares" target="_blank" 
-       class="transition transform hover:scale-125 hover:shadow-lg hover:shadow-blue-500 rounded-full p-2">
-      <i class="fab fa-linkedin-in text-4xl" style="color: #0A66C2;"></i>
-    </a>
-
-  </div>
-</div>
-
-
-
+          <!-- Error Message -->
+          <div id="form-error" class="mt-6 p-4 bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-200 text-red-800 rounded-xl hidden animate-fade-in">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="font-medium">Oops! Something went wrong</p>
+                <p class="text-sm text-red-600 mt-1" id="error-message">It's not your fault. Please try again or contact us directly.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <style>
-        .glossy-success {
-          background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%);
-          box-shadow: 0 4px 24px rgba(16,185,129,0.18), 0 2px 8px rgba(0,0,0,0.08);
-          border: 2px solid #34d399;
-          position: relative;
-          overflow: hidden;
-          color: #065f46;
-          font-weight: 600;
-        }
-        .glossy-success::after {
-          content: '';
-          position: absolute;
-          top: 0; left: 0; right: 0; height: 40%;
-          background: linear-gradient(90deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%);
-          border-radius: 0 0 1rem 1rem;
-          pointer-events: none;
-        }
-        .glossy-error {
-          background: linear-gradient(135deg, #fee2e2 0%, #f87171 100%);
-          box-shadow: 0 4px 24px rgba(239,68,68,0.18), 0 2px 8px rgba(0,0,0,0.08);
-          border: 2px solid #ef4444;
-          position: relative;
-          overflow: hidden;
-          color: #b91c1c;
-          font-weight: 600;
-        }
-        .glossy-error::after {
-          content: '';
-          position: absolute;
-          top: 0; left: 0; right: 0; height: 40%;
-          background: linear-gradient(90deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%);
-          border-radius: 0 0 1rem 1rem;
-          pointer-events: none;
-        }
-      </style>
-      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-      <script>
-        emailjs.init('Ek4O3pznjchURi7UR');
-        document.addEventListener('DOMContentLoaded', () => {
-          const form = document.getElementById('contact-form');
-          const nameInput = document.getElementById('name');
-          const emailInput = document.getElementById('email');
-          const phoneInput = document.getElementById('phone');
-          const errorName = document.getElementById('error-name');
-          const errorEmail = document.getElementById('error-email');
-          const errorPhone = document.getElementById('error-phone');
-          const formSuccess = document.getElementById('form-success');
-          const formError = document.getElementById('form-error');
-          form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            let valid = true;
-            // Name validation
-            if (!nameInput.value.trim()) {
-              errorName.classList.remove('hidden');
-              valid = false;
-            } else {
-              errorName.classList.add('hidden');
-            }
-            // Email validation
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailInput.value.trim() || !emailPattern.test(emailInput.value.trim())) {
-              errorEmail.classList.remove('hidden');
-              valid = false;
-            } else {
-              errorEmail.classList.add('hidden');
-            }
-            // Phone validation (South Africa)
-            const phonePattern = /^(\+27|0)[6-8][0-9]{8}$/;
-            if (!phoneInput.value.trim() || !phonePattern.test(phoneInput.value.trim().replace(/\s+/g, ''))) {
-              errorPhone.classList.remove('hidden');
-              valid = false;
-            } else {
-              errorPhone.classList.add('hidden');
-            }
-            if (!valid) {
-              formSuccess.classList.add('hidden');
-              formError.classList.remove('hidden');
-              formError.classList.add('glossy-error');
-              formError.textContent = 'Please fix the errors above and try again.';
-              return;
-            }
-            // Clear previous messages
-            formSuccess.classList.add('hidden');
-            formError.classList.add('hidden');
-            try {
-              await emailjs.sendForm(
-                'service_qch7mf5',     // Service ID
-                'template_9lgbc28',    // Template ID
-                form,
-                'Ek4O3pznjchURi7UR'    //  Public Key
-              );
-              formSuccess.classList.remove('hidden');
-              formSuccess.classList.add('glossy-success');
-              formSuccess.textContent = "Thank you! Your message was sent successfully. We'll get back to you soon.";
-              form.reset();
-            } catch (error) {
-              console.error('EmailJS Error:', error);
-              formError.classList.remove('hidden');
-              formError.classList.add('glossy-error');
-              formError.textContent = "Oops! Something went wrong, it's not your fault. Please try again in a moment or contact us directly.";
-            }
-          });
-        });
-      </script>
+
+      <!-- Right: Contact Info & Business Hours -->
+      <div class="w-full lg:w-1/2 order-2 lg:order-2 flex flex-col h-full">
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 p-8 mb-6">
+          <h3 class="text-2xl font-bold mb-6 text-gray-800">Get In Touch</h3>
+          <div class="space-y-6">
+            <div class="flex items-start group">
+              <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-4 rounded-2xl mr-4 group-hover:from-indigo-200 group-hover:to-purple-200 transition-all duration-300">
+                <i class="fas fa-map-marker-alt text-indigo-600 text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-1">Our Location</h4>
+                <p class="text-gray-600">Pretoria, South Africa</p>
+              </div>
+            </div>
+
+            <div class="flex items-start group">
+              <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-4 rounded-2xl mr-4 group-hover:from-indigo-200 group-hover:to-purple-200 transition-all duration-300">
+                <i class="fas fa-envelope text-indigo-600 text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-1">Email Us</h4>
+                <p class="text-gray-600">
+                  <a href="mailto:info@linetechsoftwares.co.za" class="hover:text-indigo-600 transition-colors duration-200">
+                    info@linetechsoftwares.co.za
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start group">
+              <div class="bg-gradient-to-br from-indigo-100 to-purple-100 p-4 rounded-2xl mr-4 group-hover:from-indigo-200 group-hover:to-purple-200 transition-all duration-300">
+                <i class="fas fa-phone-alt text-indigo-600 text-lg"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 mb-1">Call Us</h4>
+                <div class="text-gray-600 space-y-1">
+                  <p class="text-sm">For all inquiries, please contact:</p>
+                  <div class="flex flex-col space-y-1">
+                    <a href="tel:+27653114090" class="hover:text-indigo-600 transition-colors duration-200 font-medium">
+                      +27 65 311 4090
+                    </a>
+                    <a href="tel:+27634438535" class="hover:text-indigo-600 transition-colors duration-200 font-medium">
+                      +27 63 443 8535
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl p-8 text-white shadow-xl">
+          <h3 class="text-xl font-bold mb-6">Business Hours</h3>
+          <ul class="space-y-3 mb-8">
+            <li class="flex justify-between items-center py-2 border-b border-white/20">
+              <span class="font-medium">Monday - Friday:</span>
+              <span class="text-indigo-100">9:00 AM - 5:00 PM</span>
+            </li>
+            <li class="flex justify-between items-center py-2">
+              <span class="font-medium">Saturday - Sunday:</span>
+              <span class="text-indigo-100">Closed</span>
+            </li>
+          </ul>
+
+          <div class="text-center">
+            <p class="text-white/90 mb-6 text-lg font-medium">
+              Connect with us on social media
+            </p>
+            
+            <div class="flex justify-center space-x-6">
+              <a href="https://x.com/linetech___" target="_blank" 
+                 class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl transition-all duration-300 hover:bg-white/20 hover:scale-110 hover:shadow-lg group">
+                <i class="fab fa-twitter text-2xl text-blue-300 group-hover:text-white transition-colors duration-300"></i>
+              </a>
+
+              <a href="https://www.instagram.com/linetechsoftwares/" target="_blank" 
+                 class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl transition-all duration-300 hover:bg-white/20 hover:scale-110 hover:shadow-lg group">
+                <i class="fab fa-instagram text-2xl text-pink-300 group-hover:text-white transition-colors duration-300"></i>
+              </a>
+
+              <a href="https://linkedin.com/company/line-tech-softwares" target="_blank" 
+                 class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl transition-all duration-300 hover:bg-white/20 hover:scale-110 hover:shadow-lg group">
+                <i class="fab fa-linkedin-in text-2xl text-blue-300 group-hover:text-white transition-colors duration-300"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fade-in 0.5s ease-out;
+    }
+
+    /* Prevent zoom on mobile inputs */
+    @media screen and (max-width: 768px) {
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select,
+      textarea {
+        font-size: 16px !important;
+        transform: translateZ(0);
+        
+        border-radius: 12px;
+      }
+    }
+
+    /* Enhanced focus states */
+    input:focus, select:focus, textarea:focus {
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Smooth transitions for all interactive elements */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+
+ 
+</section>
+
+
  <!-- Terms and Privacy Section -->
 <section class="py-20 bg-white">
   <div class="container mx-auto px-4">
@@ -1870,7 +1852,10 @@ function calculatorData() {
   
   <script src= "tooltip.js"></script>
    <script src= "sw.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="submit.js"></script>
+
+
 
 
 </body>
