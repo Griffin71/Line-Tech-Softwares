@@ -1145,18 +1145,24 @@
               <span id="error-email" class="text-red-500 text-sm hidden mt-1 block">Please enter a valid email address.</span>
             </div>
 
-            <div class="mb-6">
+          <div class="mb-6">
               <label for="phone" class="block text-gray-700 font-medium mb-3">Phone Number</label>
-              <div class="flex items-center gap-3">
-                <div class="flex items-center bg-gray-50 px-3 py-3 rounded-xl border-2 border-gray-200">
-                  <img src="https://flagcdn.com/za.svg" alt="ZA" class="h-5 w-7 rounded shadow-sm" />
+              <div class="flex flex-col sm:flex-row items-stretch gap-3">
+                <div class="flex items-center bg-gray-50 px-3 py-3 rounded-xl border-2 border-gray-200 sm:flex-none w-full sm:w-auto justify-center">
+                  <img src="https://flagcdn.com/za.svg" alt="ZA" class="h-5 w-7 rounded shadow-sm object-cover" />
                   <span class="ml-2 text-gray-600 font-medium">+27</span>
                 </div>
-                <input type="tel" id="phone" name="user_phone" 
-                       class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-300 text-base" 
-                       placeholder="71 234 5678" pattern="^[6-8][0-9]{8}$" required>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="user_phone"
+                  aria-describedby="error-phone"
+                  class="flex-1 min-w-0 w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all duration-300 text-base"
+                  placeholder="71 234 5678"
+                  pattern="^[6-8][0-9]{8}$"
+                  required>
               </div>
-              <span id="error-phone" class="text-red-500 text-sm hidden mt-1 block">Please enter a valid South African phone number.</span>
+              <span id="error-phone" class="text-red-500 text-sm hidden mt-1 block">Please enter a valid South African phone number or remove the 0 at the start.</span>
             </div>
 
             <div class="mb-6">
@@ -1860,6 +1866,7 @@ function calculatorData() {
 
 </body>
 </html>
+
 
 
 
