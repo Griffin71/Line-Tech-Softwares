@@ -66,6 +66,7 @@
 
 
   <link rel="stylesheet" href="tooltip.css">
+  <link rel="stylesheet" href ="snow.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -423,10 +424,31 @@
   <nav class="bg-white shadow-md fixed w-full z-50">
     <div class="container mx-auto px-4 py-3">
       <div class="flex justify-between items-center">
-        <div class="flex items-center">
+       <!-- <div class="flex items-center">
           <img src="Line Tech Logo 2.png" alt="Line Tech Logo" class="h-8 w-8 md:h-10 md:w-10 mr-2 rounded-full object-contain shadow-sm bg-white border border-gray-200" />
           <span class="text-indigo-600 text-2xl font-bold">Line Tech Softwares</span>
-        </div>
+        </div>-->
+        <!--Christmas LTS-->
+        <div class="relative flex items-center snowfall">
+  <img
+    src="Line Tech Logo 2.png"
+    alt="Line Tech Logo"
+    class="h-8 w-8 md:h-10 md:w-10 mr-2 rounded-full object-contain shadow-sm bg-white border border-red-300"
+  />
+
+  <span
+    class="text-2xl font-bold bg-gradient-to-r from-red-600 to-green-600 bg-clip-text text-transparent animate-pulse drop-shadow-lg"
+  >
+    Line Tech Softwares
+  </span>
+
+  <!-- Snow Layer -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+    <div class="snow"></div>
+  </div>
+</div>
+        <!--End of christmas snippet-->
+
         
         <div class="hidden md:flex space-x-8">
           <a href="#home" class="font-medium hover:text-indigo-600 transition">Home</a>
@@ -1866,6 +1888,7 @@ function calculatorData() {
 
 </body>
 </html>
+
 
 
 
