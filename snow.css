@@ -1,0 +1,22 @@
+/* Snowfall effect */
+.snowfall .snow {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 0.7;
+  animation: snowFall 6s linear infinite;
+}
+
+@keyframes snowFall {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
